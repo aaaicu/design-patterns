@@ -6,7 +6,11 @@ public class CoolSeller extends DefaultTrader{
     }
 
     @Override
-    public void requestTrade() {
-        System.out.println(this.hopePrice + "원으로 판매 제안합니다.");
+    public String requestTrade() {
+        return printRequestMessage();
+    }
+
+    public String printRequestMessage() {
+        return this.hopePrice + "원으로 쿨하게 판매 제안합니다.";
     }
 }
