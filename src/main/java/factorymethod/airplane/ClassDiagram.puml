@@ -1,0 +1,28 @@
+@startuml
+
+interface AirplaneFactory {
+    + create() :Airplane
+}
+
+AirplaneFactory .> Airplane : << create >>
+
+class OldAirplaneFactory implements AirplaneFactory{
+    + orderAirplane() :Airplane
+}
+
+class RenewalAirplaneFactory implements AirplaneFactory{
+    + orderAirplane() :Airplane
+}
+
+OldAirplaneFactory .> OldAirplane : << create >>
+RenewalAirplaneFactory .> RenewalAirplane : << create >>
+
+
+
+interface Airplane
+'
+class OldAirplane implements Airplane {}
+class RenewalAirplane implements Airplane {}
+
+
+@enduml

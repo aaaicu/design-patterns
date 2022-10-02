@@ -15,8 +15,7 @@ class TraderFactoryTest {
     @BeforeEach
     void before() {
         buyerFactory = new BuyerFactory();
-        sellerFactory = new SellerFactory();
-    }
+        sellerFactory = new SellerFactory();   }
 
     @Test()
     @DisplayName("구매자")
