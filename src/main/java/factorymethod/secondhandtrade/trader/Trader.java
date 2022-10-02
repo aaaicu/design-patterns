@@ -2,13 +2,21 @@ package factorymethod.secondhandtrade.trader;
 
 public interface Trader {
     default void trading() {
-        printStart();
-        requestTrade();
+        print(tradeStart());
+        print(requestTrade());
+        print(tradeEnd());
     }
 
-    private void printStart() {
-        System.out.println("거래 시작");
+    private String tradeStart() {
+        return "거래 시작";
+    }
+    private String tradeEnd() {
+        return "거래 종료";
     }
 
-    void requestTrade();
+    String requestTrade();
+
+    private void print(String message) {
+        System.out.println(message);
+    }
 }

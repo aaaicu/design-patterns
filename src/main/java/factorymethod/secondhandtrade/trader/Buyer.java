@@ -7,7 +7,11 @@ public class Buyer extends DefaultTrader {
     }
 
     @Override
-    public void requestTrade() {
-        System.out.println(this.hopePrice + "원으로 협의 시작합니다.");
+    public String requestTrade() {
+        return printRequestMessage();
+    }
+
+    public String printRequestMessage() {
+        return this.hopePrice + "원으로 구매 협의 시작합니다.";
     }
 }

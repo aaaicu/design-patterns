@@ -1,0 +1,36 @@
+@startuml
+
+interface TraderFactory {
+    + create() :Trader
+}
+class BuyerFactory {
+    + create() :Trader
+}
+
+TraderFactory <|.. BuyerFactory
+'TraderFactory <|.. SellerFactory
+
+Trader <|.. DefaultTrader
+
+'class SellerFactory{
+'    + create() :Trader
+'}
+
+
+BuyerFactory ..> Buyer : << create >>
+BuyerFactory ..> CoolBuyer : << create >>
+
+'SellerFactory ..> Seller : << create >>
+'SellerFactory ..> CoolSeller : << create >>
+
+interface Trader
+abstract DefaultTrader
+'
+class Buyer extends DefaultTrader {}
+class CoolBuyer extends DefaultTrader
+class Seller extends DefaultTrader {}
+class CoolSeller extends DefaultTrader
+
+TraderFactory .> Trader : "        "
+
+@enduml
