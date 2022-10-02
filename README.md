@@ -16,7 +16,8 @@
 
 
 ##### 시나리오 1. 중고거래자 생성
-![seconhand-tradepng](https://user-images.githubusercontent.com/35210426/193436567-beca926c-28a2-41d8-b2f1-9bbf248fad41.png)
+![seconhand-tradepng](https://user-images.githubusercontent.com/35210426/193437203-51751c6e-5610-4ebb-b727-54917065326d.png)
+
 
 * 거래자 별로 다른 행동을 하는 거래자를 생성하는 시나리오
 * 거래자 종류 :  구매자, 판매자, 쿨구매자, 쿨판매자
