@@ -4,13 +4,11 @@ class Car <<context>> {
 - DriveState state
 - List<Person> people
 - List<Window> windows
-- int speed
 
 + void setState(DriveState state)
 + List<Person> getPeople()
 + List<Window> getWindows()
 + void pickupPerson(Person person)
-+ void setSpeed(int speed)
 + void setWindows(int height)
 }
 
@@ -21,38 +19,32 @@ interface DriveState {
 }
 
 class Drive0Km implements DriveState {
+    - Car car
     + void setWindows(int height)
     + void pickupPerson(Person person)
-    + void setSpeed(int speed)
 }
 
 class Drive30Km implements DriveState {
+    - Car car
     + void setWindows(int height)
     + void pickupPerson(Person person)
-    + void setSpeed(int speed)
-}
-
-class Drive60Km implements DriveState {
-    + void setWindows(int height)
-    + void pickupPerson(Person person)
-    + void setSpeed(int speed)
 }
 
 class Drive80Km implements DriveState {
+    - Car car
     + void setWindows(int height)
     + void pickupPerson(Person person)
-    + void setSpeed(int speed)
 }
 
-class Drive120Km implements DriveState {
-    + void setWindows(int height)
-    + void pickupPerson(Person person)
-    + void setSpeed(int speed)
-}
 
 class Person
 
-class Window
+class Window {
+    - int height
+    + getHeight()
+    + setHeight(int height)
+
+}
 
 Car -> DriveState : "<<use>>"
 Car --> Person

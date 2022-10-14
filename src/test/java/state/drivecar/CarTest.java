@@ -15,9 +15,7 @@ class CarTest {
         car.pickupPerson(person);
 
         car.setState(new Drive0Km(car));
-        Assertions.assertThatCode(() -> {
-            car.pickupPerson(person);
-        }).doesNotThrowAnyException();
+        Assertions.assertThatCode(() -> car.pickupPerson(person)).doesNotThrowAnyException();
 
         Assertions.assertThatThrownBy(() -> {
             car.setState(new Drive30Km(car));
@@ -25,17 +23,7 @@ class CarTest {
         }).isExactlyInstanceOf(UnsupportedOperationException.class);
 
         Assertions.assertThatThrownBy(() -> {
-            car.setState(new Drive60Km(car));
-            car.pickupPerson(person);
-        }).isExactlyInstanceOf(UnsupportedOperationException.class);
-
-        Assertions.assertThatThrownBy(() -> {
             car.setState(new Drive80Km(car));
-            car.pickupPerson(person);
-        }).isExactlyInstanceOf(UnsupportedOperationException.class);
-
-        Assertions.assertThatThrownBy(() -> {
-            car.setState(new Drive120Km(car));
             car.pickupPerson(person);
         }).isExactlyInstanceOf(UnsupportedOperationException.class);
 
@@ -53,25 +41,10 @@ class CarTest {
         car.setState(new Drive0Km(car));
         Assertions.assertThatCode(() -> {
         }).doesNotThrowAnyException();
-//
-//        Assertions.assertThatThrownBy(() -> {
-//            car.setState(new Drive30Km(car));
-//            car.setWindows(10);
-//        }).isExactlyInstanceOf(UnsupportedOperationException.class);
-//
-//        Assertions.assertThatThrownBy(() -> {
-//            car.setState(new Drive60Km(car));
-//            car.setWindows(10);
-//        }).isExactlyInstanceOf(UnsupportedOperationException.class);
 
-//        Assertions.assertThatThrownBy(() -> {
-//            car.setState(new Drive80Km(car));
-//            car.setWindows(10);
-//        }).isExactlyInstanceOf(UnsupportedOperationException.class);
         car.setState(new Drive80Km(car));
         car.setWindows(90);
         System.out.println(car);
-
 
         car.setState(new Drive80Km(car));
         car.setWindows(70);

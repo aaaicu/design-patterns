@@ -2,7 +2,7 @@ package state.drivecar;
 
 public class Drive80Km implements DriveState {
 
-    private Car car;
+    private final Car car;
 
     public Drive80Km(Car car) {
         this.car = car;
@@ -27,11 +27,5 @@ public class Drive80Km implements DriveState {
     @Override
     public void pickupPerson(Person person) {
         throw new UnsupportedOperationException();
-
-    }
-
-    @Override
-    public void setSpeed(int speed) {
-
     }
 }
